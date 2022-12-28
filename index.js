@@ -40,8 +40,8 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(orijinalTatlar){
+  return(orijinalTatlar);
 }
 
 
@@ -56,8 +56,13 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar) {  
+  if (orijinalTatlar.length === 25 ) {    
+    return (true);
+  } 
+  if (orijinalTatlar.length !== 25 ) { 
+    return (false);
+}
 }
 
 
@@ -74,8 +79,9 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(orijinalTatlar){
+  orijinalTatlar.unshift("Kakule");
+  return(orijinalTatlar);
 }
 
 
@@ -92,8 +98,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(orijinalTatlar){
+  orijinalTatlar.pop();
+  return(orijinalTatlar);
 }
 
 
@@ -108,9 +115,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(orijinalTatlar,index){
+  return orijinalTatlar[index];
 }
+
+console.log(indekstekiCesitiGetir(orijinalTatlar,2));
 
 
 /* Görev 6:
@@ -128,10 +137,11 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(orijinalTatlar, cikarilan) {
+  let index = orijinalTatlar.indexOf(cikarilan);
+  orijinalTatlar.splice(index, 1);
+  return orijinalTatlar;
 }
-
 
 /* Görev 7:
 
@@ -154,8 +164,13 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(orijinalTatlar, istenen) {
+  let filtre = [];
+  for (let i = 0; i < orijinalTatlar.length; i++) {
+    if (orijinalTatlar[i].includes(istenen) === true)
+      filtre.push(orijinalTatlar[i]);
+  }
+  return filtre;
 }
 
 
